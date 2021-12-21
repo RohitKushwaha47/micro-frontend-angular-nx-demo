@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/shared/todo",
+  "sourceRoot": "libs/shared/todo/src",
+  "prefix": "mfe-demo-prototype",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/shared/todo"],
+      "options": {
+        "jestConfig": "libs/shared/todo/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/shared/todo/src/**/*.ts",
+          "libs/shared/todo/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

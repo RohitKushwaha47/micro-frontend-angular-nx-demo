@@ -14,7 +14,12 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@mfe-demo-prototype/shared/authentication": [
+        "libs/shared/authentication/src/index.ts"
+      ],
+      "@mfe-demo-prototype/shared/todo": ["libs/shared/todo/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

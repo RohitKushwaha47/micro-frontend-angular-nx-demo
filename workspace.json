@@ -1,4 +1,13 @@
 {
   "version": 2,
-  "projects": {}
+  "projects": {
+    "auth": "apps/auth",
+    "auth-e2e": "apps/auth-e2e",
+    "dashboard": "apps/dashboard",
+    "dashboard-e2e": "apps/dashboard-e2e",
+    "shared-authentication": "libs/shared/authentication",
+    "shared-todo": "libs/shared/todo",
+    "todos": "apps/todos",
+    "todos-e2e": "apps/todos-e2e"
+  }
 }
