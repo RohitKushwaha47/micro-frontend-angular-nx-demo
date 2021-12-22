@@ -9,6 +9,10 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { RouterModule, Routes } from '@angular/router';
+import { getApp, getApps, initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideAuth, getAuth } from '@angular/fire/auth';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 
 const routes: Routes = [
   {
@@ -19,10 +23,15 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [AppComponent, ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes, { initialNavigation: 'enabledBlocking' }),
+    provideFirebaseApp(() =>
+      getApps().length === 0 ? initializeApp(environment.firebase) : getApp()
+    ),
+    provideAuth(() => getAuth()),
+    provideFirestore(() => getFirestore()),
   ],
   providers: [],
   bootstrap: [AppComponent],

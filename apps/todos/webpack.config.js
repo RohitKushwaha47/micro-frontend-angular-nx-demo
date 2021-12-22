@@ -55,7 +55,10 @@ module.exports = {
         '@angular/common': { singleton: true, strictVersion: true },
         '@angular/common/http': { singleton: true, strictVersion: true },
         '@angular/router': { singleton: true, strictVersion: true },
-        tailwindcss: { singleton: true, strictVersion: true },
+        '@angular/fire': { singleton: true, strictVersion: true },
+        '@angular/fire/auth': { singleton: true, strictVersion: true },
+        '@angular/fire/firestore': { singleton: true, strictVersion: true },
+        '@angular/fire/app': { singleton: true, strictVersion: true },
         ...sharedMappings.getDescriptors(),
       },
       library: {

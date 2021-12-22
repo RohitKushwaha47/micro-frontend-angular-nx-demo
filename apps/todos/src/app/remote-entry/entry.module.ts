@@ -5,17 +5,22 @@ import { RouterModule, Routes } from '@angular/router';
 import { TodoFormComponent } from './components/todo-form/todo-form.component';
 import { TodoListComponent } from './components/todo-list/todo-list.component';
 import { TodoListItemComponent } from './components/todo-list-item/todo-list-item.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {
-    path: '',
+    path: ':userUid',
     component: TodoListComponent,
   },
 ];
 
 @NgModule({
   declarations: [TodoFormComponent, TodoListComponent, TodoListItemComponent],
-  imports: [CommonModule, RouterModule.forChild(routes)],
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    RouterModule.forChild(routes),
+  ],
   providers: [],
 })
 export class RemoteEntryModule {}

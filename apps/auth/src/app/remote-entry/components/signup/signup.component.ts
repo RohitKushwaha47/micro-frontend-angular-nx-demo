@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { AuthService } from '@mfe-demo-prototype/shared/authentication';
 
 @Component({
   selector: 'mfe-demo-prototype-signup',
@@ -77,7 +78,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 export class SignupComponent implements OnInit {
   public signUpForm!: FormGroup;
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private authService: AuthService) {}
 
   ngOnInit(): void {
     this.signUpForm = this.fb.group({
@@ -87,7 +88,12 @@ export class SignupComponent implements OnInit {
     });
   }
 
-  submit() {
-    console.log(this.signUpForm.value);
+  async submit() {
+    if (this.signUpForm.valid) {
+      const name = this.signUpForm.get('name')?.value;
+      const email = this.signUpForm.get('email')?.value;
+      const password = this.signUpForm.get('password')?.value;
+      await this.authService.signUp({ name, email, password });
+    }
   }
 }
