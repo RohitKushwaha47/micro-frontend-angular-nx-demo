@@ -27,12 +27,20 @@
     ]
   },
   "projects": {
+    "auth": {
+      "tags": []
+    },
+    "shared-auth": {
+      "tags": []
+    },
+    "shared-todos": {
+      "tags": []
+    },
     "shell": {
       "tags": []
     },
-    "shell-e2e": {
-      "tags": [],
-      "implicitDependencies": ["shell"]
+    "todos": {
+      "tags": []
     }
   }
 }

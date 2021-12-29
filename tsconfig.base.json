@@ -14,7 +14,10 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@mfe/shared/auth": ["libs/shared/auth/src/index.ts"],
+      "@mfe/shared/todos": ["libs/shared/todos/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
